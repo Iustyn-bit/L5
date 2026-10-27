@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Constelația L5</title>
+  <desc id="desc">O constelație pe un fundal verde-petrol, cu stele și trei noduri care se luminează la trecerea cursorului.</desc>
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081412"/>
+      <stop offset=".55" stop-color="#102724"/>
+      <stop offset="1" stop-color="#172f2a"/>
+    </linearGradient>
+    <radialGradient id="aura">
+      <stop offset="0" stop-color="#d9bd87" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#d9bd87" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="frame"><rect width="1200" height="300" rx="20"/></clipPath>
+    <style>
+      .node { cursor: pointer; transform-box: fill-box; transform-origin: center; transition: transform .3s ease, filter .3s ease; }
+      .node:hover { filter: url(#glow); transform: scale(1.13); }
+      .star { cursor: pointer; transform-box: fill-box; transform-origin: center; transition: transform .25s ease, opacity .25s ease; }
+      .star:hover { opacity: 1; transform: scale(2.6); }
+      .path { stroke-dasharray: 4 10; animation: travel 14s linear infinite; }
+      @keyframes travel { to { stroke-dashoffset: -140; } }
+      @media (prefers-reduced-motion: reduce) { .path { animation: none; } }
+    </style>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="300" fill="url(#night)"/>
+    <circle cx="180" cy="150" r="130" fill="url(#aura)" opacity=".55"/>
+    <circle cx="600" cy="150" r="130" fill="url(#aura)" opacity=".32"/>
+    <circle cx="1020" cy="150" r="130" fill="url(#aura)" opacity=".4"/>
+    <path class="path" d="M180 150 C320 72 430 226 600 150 S875 72 1020 150" fill="none" stroke="#b6c8a9" stroke-opacity=".42" stroke-width="1.5"/>
+    <path d="M180 150 C320 72 430 226 600 150 S875 72 1020 150" fill="none" stroke="#d7b77e" stroke-opacity=".12" stroke-width="14"/>
+    <g fill="#f2ead8" opacity=".72">
+      <circle class="star" cx="82" cy="65" r="1.8"/>
+      <circle class="star" cx="315" cy="230" r="1.5"/>
+      <circle class="star" cx="472" cy="60" r="1.6"/>
+      <circle class="star" cx="760" cy="75" r="1.4"/>
+      <circle class="star" cx="886" cy="226" r="1.8"/>
+      <circle class="star" cx="1114" cy="72" r="1.5"/>
+      <circle class="star" cx="1110" cy="250" r="1.2"/>
+      <circle class="star" cx="92" cy="235" r="1.2"/>
+    </g>
+    <g class="node">
+      <circle cx="180" cy="150" r="34" fill="#132d28" stroke="#d7b77e" stroke-opacity=".6"/>
+      <circle cx="180" cy="150" r="19" fill="#83ad95"/>
+      <circle cx="180" cy="150" r="7" fill="#f2d8a5"/>
+    </g>
+    <g class="node">
+      <circle cx="600" cy="150" r="43" fill="#132d28" stroke="#a8c9b0" stroke-opacity=".65"/>
+      <circle cx="600" cy="150" r="27" fill="#487e70"/>
+      <circle cx="590" cy="140" r="8" fill="#d5c69d"/>
+      <path d="M580 159 Q600 146 621 158" fill="none" stroke="#c5ded0" stroke-opacity=".72" stroke-width="3"/>
+    </g>
+    <g class="node">
+      <circle cx="1020" cy="150" r="34" fill="#132d28" stroke="#d7b77e" stroke-opacity=".6"/>
+      <circle cx="1020" cy="150" r="19" fill="#c39b69"/>
+      <circle cx="1020" cy="150" r="7" fill="#fff0cf"/>
+    </g>
+    <g fill="#e6dfcd" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">
+      <text x="180" y="230" text-anchor="middle">ORIGINE</text>
+      <text x="600" y="230" text-anchor="middle">ORBITĂ</text>
+      <text x="1020" y="230" text-anchor="middle">DESTINAȚIE</text>
+    </g>
+    <text x="600" y="276" fill="#829b8f" font-family="Arial, sans-serif" font-size="10" letter-spacing="2" text-anchor="middle">TRECI CURSORUL PESTE NODURI</text>
+  </g>
+</svg>
