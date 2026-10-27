@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Flux de lucru Git</title>
+  <desc id="desc">Diagramă cu staging, commit, push și pull; fiecare etapă luminează la trecerea cursorului.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071311"/>
+      <stop offset=".52" stop-color="#0d211d"/>
+      <stop offset="1" stop-color="#172b24"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#648d7b" stop-opacity=".2"/>
+      <stop offset=".52" stop-color="#d7b77e" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#648d7b" stop-opacity=".35"/>
+    </linearGradient>
+    <radialGradient id="node-fill">
+      <stop offset="0" stop-color="#31584a"/>
+      <stop offset="1" stop-color="#12241f"/>
+    </radialGradient>
+    <filter id="node-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10Z" fill="#d7b77e"/>
+    </marker>
+    <clipPath id="frame"><rect width="1200" height="360" rx="20"/></clipPath>
+    <style>
+      .route { stroke-dasharray: 5 10; animation: flow 16s linear infinite; }
+      .step { cursor: pointer; transform-box: fill-box; transform-origin: center; transition: transform .3s ease, filter .3s ease; }
+      .step:hover { filter: url(#node-glow); transform: scale(1.09); }
+      .step:hover .halo { opacity: .8; }
+      .halo { opacity: .24; transition: opacity .3s ease; }
+      .step text { fill: #e5ddcb; font-family: Arial, sans-serif; font-size: 12px; letter-spacing: 2px; }
+      .step .command { fill: #9fb3a7; font-size: 11px; letter-spacing: 0; }
+      @keyframes flow { to { stroke-dashoffset: -180; } }
+      @media (prefers-reduced-motion: reduce) { .route { animation: none; } }
+    </style>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="360" fill="url(#bg)"/>
+    <path d="M115 145 H1085" fill="none" stroke="url(#line)" stroke-width="2"/>
+    <path class="route" d="M115 145 H1085" fill="none" stroke="#e3c88e" stroke-opacity=".72" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M1080 178 C1040 284 300 286 120 178" fill="none" stroke="#9fbaa6" stroke-opacity=".22" stroke-width="1.5" stroke-dasharray="3 9" marker-end="url(#arrow)"/>
+    <g class="step">
+      <circle class="halo" cx="150" cy="145" r="58" fill="#d7b77e"/>
+      <circle cx="150" cy="145" r="37" fill="url(#node-fill)" stroke="#88ad91" stroke-opacity=".8"/>
+      <circle cx="150" cy="145" r="5" fill="#d7b77e"/>
+      <text x="150" y="215" text-anchor="middle">STAGING</text>
+      <text class="command" x="150" y="240" text-anchor="middle">git add</text>
+    </g>
+    <g class="step">
+      <circle class="halo" cx="450" cy="145" r="58" fill="#d7b77e"/>
+      <circle cx="450" cy="145" r="37" fill="url(#node-fill)" stroke="#a9b99b" stroke-opacity=".8"/>
+      <path d="M438 145 l8 8 17-19" fill="none" stroke="#ead6ad" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="450" y="215" text-anchor="middle">COMMIT</text>
+      <text class="command" x="450" y="240" text-anchor="middle">git commit</text>
+    </g>
+    <g class="step">
+      <circle class="halo" cx="750" cy="145" r="58" fill="#d7b77e"/>
+      <circle cx="750" cy="145" r="37" fill="url(#node-fill)" stroke="#c5a778" stroke-opacity=".8"/>
+      <path d="M750 163 V127 M737 140 l13-13 13 13" fill="none" stroke="#f0d7b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="750" y="215" text-anchor="middle">PUSH</text>
+      <text class="command" x="750" y="240" text-anchor="middle">git push</text>
+    </g>
+    <g class="step">
+      <circle class="halo" cx="1050" cy="145" r="58" fill="#d7b77e"/>
+      <circle cx="1050" cy="145" r="37" fill="url(#node-fill)" stroke="#88ad91" stroke-opacity=".8"/>
+      <path d="M1050 127 V163 M1037 150 l13 13 13-13" fill="none" stroke="#c0d8c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="1050" y="215" text-anchor="middle">PULL</text>
+      <text class="command" x="1050" y="240" text-anchor="middle">git pull</text>
+    </g>
+    <g fill="#dce4d8" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">
+      <text x="600" y="64" text-anchor="middle">LOCAL WORK  |  VERSIONARE  |  GITHUB</text>
+    </g>
+    <text x="600" y="322" fill="#819b8d" font-family="Arial, sans-serif" font-size="10" letter-spacing="2" text-anchor="middle">PUSH PUBLICĂ MODIFICĂRILE · PULL ADUCE MODIFICĂRILE REMOTE</text>
+  </g>
+</svg>
