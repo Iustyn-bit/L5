@@ -1,22 +1,30 @@
 <p align="center">
-	<img src="cosmic-banner.svg" alt="Banner animat cu tema spațiului, pentru proiectul L5" width="100%">
+	<img src="cosmic-banner.svg" alt="Ilustrație cosmică pentru proiectul L5" width="100%">
 </p>
 
-<h1 align="center">L5 · Salut, Univers!</h1>
+<h1 align="center">L5 — Salut, Univers!</h1>
 
 <p align="center">
-	Un prim pas în web development, cu un mic salut trimis direct în cosmos.
+	O pagină mică. Un început mare.
 </p>
 
-## Despre proiect
+<p align="center">
+	<code>HTML</code> &nbsp;·&nbsp; Fără dependențe &nbsp;·&nbsp; Se deschide direct în browser
+</p>
 
-L5 este o pagină web simplă, scrisă în HTML. Pagina întâmpină vizitatorii cu mesajul „Salut Lume!” și o urare de bun venit.
+---
 
-## Deschide pagina
+## Despre
 
-Descarcă proiectul și deschide `index.html` într-un browser. Nu sunt necesare instalări sau dependențe.
+L5 este un exercițiu introductiv de web development, realizat în HTML. Pagina afișează un mesaj de bun venit, iar acest README adaugă proiectului o prezentare în aceeași temă cosmică.
 
-## Fișiere
+## Rulare
 
-- `index.html` — pagina web
-- `cosmic-banner.svg` — bannerul animat folosit aici în README
+Deschide `index.html` într-un browser. Nu sunt necesare instalări, server local sau dependențe.
+
+## Structură
+
+| Fișier | Rol |
+| --- | --- |
+| `index.html` | Pagina web introductivă |
+| `cosmic-banner.svg` | Ilustrația animată din această prezentare |
